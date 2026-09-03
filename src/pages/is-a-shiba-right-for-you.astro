@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const TRAITS = [
+  { title: 'A "big dog" in a small package', desc: 'Shiba Inus are confident, bold, and independent. They have a strong personality packed into a compact, fox-like frame.' },
+  { title: 'Masters of escape', desc: 'Shibas are famously good at escaping — a secure yard and careful leash handling are essential.' },
+  { title: 'They shed a lot', desc: 'Even with regular brushing and baths, expect a good amount of shedding throughout the year.' },
+  { title: 'They need training', desc: 'A bored, untrained Shiba is a destructive Shiba. They need time, patience, and consistent training.' },
+  { title: '12–17 year commitment', desc: 'The average lifespan of a Shiba Inu is 12–17 years. Adoption is a long-term commitment.' },
+  { title: 'They can be expensive', desc: 'Annual vaccinations, preventatives, and exams cost several hundred dollars a year — and more if they become ill.' },
+];
+
+---
+
+<BaseLayout
+  title="Is a Shiba Inu Right For You? | Midwest Shiba Inu Rescue"
+  description="Thinking about a Shiba Inu? Learn the unique traits of this 'big dog in a small package' before you adopt — from Midwest Shiba Inu Rescue."
+>
+  <section class="relative overflow-hidden bg-navy py-24">
+    <div class="absolute inset-0 grid-bg opacity-[0.06]"></div>
+    <div class="relative mx-auto max-w-3xl px-5 text-center">
+      <div class="kicker !text-orange-light justify-center">Before you adopt</div>
+      <h1 class="mt-4 text-4xl font-black text-white md:text-5xl">Is a Shiba Inu right for you?</h1>
+      <p class="mt-4 text-lg text-white/80">So you think a Shiba Inu is the right dog for your family? Here are some of the unique characteristics of this "big dog in a small package."</p>
+    </div>
+  </section>
+
+  <section class="bg-white py-20">
+    <div class="mx-auto max-w-page px-5">
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {TRAITS.map((t) => (
+          <div class="card p-6">
+            <h2 class="font-heading text-lg font-bold text-navy">{t.title}</h2>
+            <p class="mt-2 text-sm leading-relaxed text-muted">{t.desc}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-12 rounded-2xl bg-sand p-8 text-center">
+        <h3 class="text-2xl font-black text-navy">Still think a Shiba is for you?</h3>
+        <div class="mt-6 flex flex-wrap justify-center gap-3">
+          <a href="/available-dogs/" class="btn-primary">See Available Dogs</a>
+          <a href="/adoption-process/" class="btn-secondary">Adoption Process</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

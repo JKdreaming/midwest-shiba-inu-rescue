@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../data/site';
+---
+
+<BaseLayout
+  title="Donate | Midwest Shiba Inu Rescue"
+  description="Donate to Midwest Shiba Inu Rescue — a 501(c)(3) non-profit. Every dollar goes to food, medical care, spay/neuter, and foster care for Shiba Inu dogs in need. Tax-deductible."
+>
+  <section class="relative overflow-hidden bg-navy py-24">
+    <div class="absolute inset-0 grid-bg opacity-[0.06]"></div>
+    <div class="relative mx-auto max-w-3xl px-5 text-center">
+      <div class="kicker !text-orange-light justify-center">Donate</div>
+      <h1 class="mt-4 text-4xl font-black text-white md:text-5xl">Give a Shiba a "Leg Up"</h1>
+      <p class="mt-4 text-lg text-white/80">Your donation houses, feeds, and cares for the Shibas as they wait for a loving, forever home.</p>
+    </div>
+  </section>
+
+  <section class="bg-white py-20">
+    <div class="mx-auto max-w-3xl px-5">
+      <p class="text-center leading-relaxed text-ink/80">MSIR is an all-volunteer, 501(c)(3) non-profit. All the money we receive is used to care for dogs and support our organization's costs. Your donation is tax-deductible to the fullest extent of the law, and you will receive a receipt by email.</p>
+      <div class="mt-10 grid gap-6 sm:grid-cols-2">
+        <div class="card p-8 text-center">
+          <h2 class="font-heading text-xl font-bold text-navy">Donate Online</h2>
+          <p class="mt-2 text-sm text-muted">Donate securely through PayPal — one-time or recurring.</p>
+          <a href={SITE.paypal} target="_blank" class="btn-primary mt-6">Donate via PayPal</a>
+        </div>
+        <div class="card p-8 text-center">
+          <h2 class="font-heading text-xl font-bold text-navy">Donate by Mail</h2>
+          <p class="mt-2 text-sm text-muted">Make your check payable to:</p>
+          <p class="mt-2 font-semibold text-navy">Midwest Shiba Inu Rescue<br />P.O. Box 8163<br />Gurnee, IL 60031</p>
+        </div>
+      </div>
+      <div class="mt-8 rounded-2xl bg-sand p-8">
+        <h3 class="text-xl font-black text-navy">Donate goods or services</h3>
+        <p class="mt-2 text-sm leading-relaxed text-muted">We almost always need dog crates and mats, collars and leashes, dog toys, and other dog-related items. We often keep Amazon Wish Lists for specific Shibas in our care. We also welcome printing services, veterinary and boarding services, and items for our annual auction.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

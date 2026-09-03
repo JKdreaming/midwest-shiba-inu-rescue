@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Puppy Mill Dogs | Midwest Shiba Inu Rescue"
+  description="Learn how Midwest Shiba Inu Rescue helps Shiba Inus released from puppy mills — and how mill-release dogs adjust to life in a foster home."
+>
+  <section class="relative overflow-hidden bg-navy py-24">
+    <div class="absolute inset-0 grid-bg opacity-[0.06]"></div>
+    <div class="relative mx-auto max-w-3xl px-5 text-center">
+      <div class="kicker !text-orange-light justify-center">Education</div>
+      <h1 class="mt-4 text-4xl font-black text-white md:text-5xl">All about mill-release Shibas</h1>
+      <p class="mt-4 text-lg text-white/80">Some of the Shibas we save come from puppy mills. Here's what that means — and how we help them heal.</p>
+    </div>
+  </section>
+
+  <section class="bg-white py-20">
+    <div class="mx-auto max-w-3xl px-5">
+      <div class="grid gap-6">
+        {[
+          { q: 'What is a puppy mill?', a: 'A puppy mill is a breeding facility that puts profit ahead of the welfare of the dogs. Dogs are often kept in poor conditions with little socialization or veterinary care.' },
+          { q: 'How do mill dogs come to us?', a: 'Some puppy mills release dogs they can no longer breed or sell. These dogs often arrive with medical needs and little experience of life in a home.' },
+          { q: 'How do mill-release Shibas adjust?', a: 'Every dog is different. Some blossom quickly in foster care; others need months of patience, routine, and gentle socialization. Our foster homes are experienced in helping them build trust and confidence.' },
+        ].map((s) => (
+          <div class="card p-6">
+            <h2 class="font-heading text-xl font-bold text-navy">{s.q}</h2>
+            <p class="mt-2 leading-relaxed text-ink/80">{s.a}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-10 rounded-2xl bg-sand p-8 text-center">
+        <h3 class="text-2xl font-black text-navy">You can help a mill dog heal</h3>
+        <div class="mt-6 flex flex-wrap justify-center gap-3">
+          <a href="/volunteer/" class="btn-primary">Become a Foster</a>
+          <a href="/donate/" class="btn-secondary">Donate</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

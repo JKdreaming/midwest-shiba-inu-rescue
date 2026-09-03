@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import { SITE } from '../data/site';
+---
+
+<BaseLayout
+  title="Foster & Volunteer | Midwest Shiba Inu Rescue"
+  description="Foster a Shiba Inu or volunteer with MSIR — foster homes, transport, home visits, and more. Every role helps save Shibas in need across the Midwest."
+>
+  <Hero
+    kicker="Foster & Volunteer"
+    title="Open your home. Change a life."
+    subtitle="Foster homes are the foundation of our rescue. Without them, we cannot say yes to the Shibas who need us most."
+    image="/images/volunteer-dog.jpg"
+  />
+
+  <!-- Foster -->
+  <section class="bg-white py-20">
+    <div class="mx-auto max-w-page px-5">
+      <div class="grid items-center gap-12 lg:grid-cols-2">
+        <div>
+          <div class="kicker text-orange">Foster a Shiba</div>
+          <h2 class="mt-3 text-3xl font-black text-navy md:text-4xl">More than a place to stay</h2>
+          <p class="mt-4 leading-relaxed text-ink/80">For a Shiba Inu who has lost everything familiar, a foster home is safety, comfort, and a second chance. Every dog who enters our rescue depends on a foster home to help them heal, learn, and feel loved again while they wait for their forever family.</p>
+          <p class="mt-3 leading-relaxed text-ink/80">Fostering isn't about being perfect. It's about opening your home and your heart to a dog in transition. Some Shibas arrive scared, confused, or in need of extra patience and guidance. What they're asking for is simple: kindness, consistency, and someone who believes in them.</p>
+          <a href="https://www.shibarescue.org/volunteer/" target="_blank" class="btn-primary mt-8">Foster Application</a>
+        </div>
+        <img src="/images/volunteer-dog.jpg" alt="A fostered Shiba Inu" class="h-80 w-full rounded-2xl object-cover" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Ways to volunteer -->
+  <section class="bg-cream py-20">
+    <div class="mx-auto max-w-page px-5">
+      <div class="text-center">
+        <div class="kicker text-orange justify-center">Other ways to help</div>
+        <h2 class="mt-3 text-3xl font-black text-navy md:text-4xl">Volunteer with MSIR</h2>
+      </div>
+      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {[
+          { title: 'Transport', desc: 'Our lowest-commitment role — drive dogs to foster homes or supplies between areas. Volunteer transports make the whole rescue possible.' },
+          { title: 'Home Visits', desc: 'Help us evaluate potential adoptive homes by visiting applicants and reporting back to our adoption team.' },
+          { title: 'Fundraising & Events', desc: 'Help plan our annual auction and other fundraisers that keep the rescue running.' },
+        ].map((v) => (
+          <div class="card p-6">
+            <h3 class="font-heading text-lg font-bold text-navy">{v.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-muted">{v.desc}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-10 text-center">
+        <a href="/contact/" class="btn-secondary">Contact Our Volunteer Team</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

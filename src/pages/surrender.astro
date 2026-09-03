@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../data/site';
+---
+
+<BaseLayout
+  title="Surrender a Shiba Inu | Midwest Shiba Inu Rescue"
+  description="Need to surrender a Shiba Inu? Learn how Midwest Shiba Inu Rescue can help your Shiba find a new home — and the steps to take first."
+>
+  <section class="relative overflow-hidden bg-navy py-24">
+    <div class="absolute inset-0 grid-bg opacity-[0.06]"></div>
+    <div class="relative mx-auto max-w-3xl px-5 text-center">
+      <div class="kicker !text-orange-light justify-center">Surrender a Shiba</div>
+      <h1 class="mt-4 text-4xl font-black text-white md:text-5xl">How MSIR can help your Shiba</h1>
+      <p class="mt-4 text-lg text-white/80">We are here to help you find a new home for your Shiba Inu.</p>
+    </div>
+  </section>
+
+  <section class="bg-white py-20">
+    <div class="mx-auto max-w-3xl px-5">
+      <div class="grid gap-6">
+        {[
+          { title: 'Consult a trainer or behaviorist first', desc: 'We ask that you first contact and consult with a qualified trainer and/or behaviorist. You can ask your veterinarian for a referral. Many issues can be resolved with the right support.' },
+          { title: 'Contact our intake team', desc: `If rehoming is still the right choice, reach out to our Intake Coordinator at intake@shibarescue.org. We will review your situation and walk you through next steps.` },
+          { title: 'Provide your Shiba\'s history', desc: 'The more we know about your Shiba\'s health, temperament, and background, the better we can match them with the right foster home and, ultimately, the right forever family.' },
+        ].map((s, i) => (
+          <div class="flex gap-4">
+            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-orange font-heading text-sm font-bold text-white">{i + 1}</span>
+            <div>
+              <h2 class="font-heading text-xl font-bold text-navy">{s.title}</h2>
+              <p class="mt-2 leading-relaxed text-ink/80">{s.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-10 rounded-2xl bg-sand p-8 text-center">
+        <p class="text-muted">Questions? Email {SITE.email} and we will route your message to the right person.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

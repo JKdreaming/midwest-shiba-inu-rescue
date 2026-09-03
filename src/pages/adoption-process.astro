@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import { ADOPTION_FEES, ADOPTION_STEPS, ADOPTION_REQUIREMENTS } from '../data/site';
+---
+
+<BaseLayout
+  title="Adoption Process & Fees | Midwest Shiba Inu Rescue"
+  description="How to adopt a Shiba Inu from MSIR — adoption fees, requirements, and the step-by-step process. We are a best-fit rescue, not first-come-first-served."
+>
+  <Hero
+    kicker="Adopt a Shiba Inu"
+    title="Adopting a Rescued Shiba Inu"
+    subtitle="Midwest Shiba Inu Rescue has foster dogs available throughout the Midwest, including IA, IL, IN, KS, MI, MN, MO, NE, OH, and WI."
+    image="/images/adopt-dog.jpg"
+  />
+
+  <!-- Fees -->
+  <section class="bg-white py-20">
+    <div class="mx-auto max-w-page px-5">
+      <div class="grid items-start gap-12 lg:grid-cols-2">
+        <div>
+          <div class="kicker text-orange">Adoption fees</div>
+          <h2 class="mt-3 text-3xl font-black text-navy">What it costs to adopt</h2>
+          <p class="mt-4 leading-relaxed text-ink/80">MSIR's adoption fee covers only a portion of the medical care we provide each dog. Every dog is spayed or neutered, up-to-date on vaccines, heartworm negative, and microchipped — and comes with a Fi GPS collar and a six-month subscription.</p>
+          <div class="mt-6 overflow-hidden rounded-2xl border border-line">
+            {ADOPTION_FEES.map((f, i) => (
+              <div class={`flex items-center justify-between px-5 py-4 ${i % 2 ? 'bg-cream' : 'bg-white'}`}>
+                <span class="font-semibold text-ink">{f.range}</span>
+                <span class="font-heading text-lg font-black text-orange">{f.fee}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div>
+          <div class="kicker text-orange">Requirements</div>
+          <h2 class="mt-3 text-3xl font-black text-navy">Good to know</h2>
+          <ul class="mt-6 grid gap-4">
+            {ADOPTION_REQUIREMENTS.map((r) => (
+              <li class="flex items-start gap-3">
+                <svg class="mt-1 h-5 w-5 shrink-0 text-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                <span class="text-ink">{r}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Steps -->
+  <section class="bg-cream py-20">
+    <div class="mx-auto max-w-3xl px-5">
+      <div class="text-center">
+        <div class="kicker text-orange justify-center">The process</div>
+        <h2 class="mt-3 text-3xl font-black text-navy md:text-4xl">Steps to adopting a MSIR rescue dog</h2>
+      </div>
+      <ol class="mt-10 grid gap-4">
+        {ADOPTION_STEPS.map((s, i) => (
+          <li class="flex gap-4">
+            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-orange font-heading text-sm font-bold text-white">{i + 1}</span>
+            <span>
+              <span class="block font-heading text-lg font-bold text-navy">{s.title}</span>
+              <span class="mt-1 block leading-relaxed text-ink/80">{s.desc}</span>
+            </span>
+          </li>
+        ))}
+      </ol>
+      <div class="mt-10 text-center">
+        <a href="/available-dogs/" class="btn-primary">See Available Dogs</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

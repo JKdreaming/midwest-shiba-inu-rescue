@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+/* Warm, approachable palette for a Shiba Inu rescue non-profit. */
+@theme {
+  --color-orange: #d96b2b;
+  --color-orange-light: #eda44e;
+  --color-orange-dark: #b5521f;
+
+  --color-navy: #2f2a26;
+  --color-navy-light: #4a423b;
+  --color-navy-dark: #241f1b;
+
+  --color-cream: #faf7f2;
+  --color-sand: #f4efe7;
+  --color-ink: #3a332d;
+  --color-muted: #6f665d;
+  --color-line: #e8e0d5;
+
+  --font-heading: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-card: 0 1px 2px rgba(47, 42, 38, 0.06), 0 8px 24px rgba(47, 42, 38, 0.07);
+  --shadow-card-lg: 0 2px 6px rgba(47, 42, 38, 0.08), 0 24px 48px rgba(47, 42, 38, 0.1);
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-cream text-ink font-sans antialiased;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4, h5 { @apply font-heading font-bold tracking-tight text-balance; }
+  p, li, a, button, input, textarea, select { font-size: clamp(0.9rem, 0.6vw + 0.7rem, 1rem); }
+  ::selection { background: var(--color-orange); color: #fff; }
+  .max-w-page { @apply max-w-[1600px] mx-auto; }
+  .section-pad { @apply py-16 md:py-24; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 font-heading font-bold text-sm uppercase tracking-wide text-white transition-all duration-200;
+    background: var(--color-orange);
+    box-shadow: 0 8px 20px rgba(217, 107, 43, 0.28);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(217, 107, 43, 0.38); }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-line px-7 py-3.5 font-heading font-bold text-sm uppercase tracking-wide text-ink transition-all duration-200;
+  }
+  .btn-secondary:hover { border-color: var(--color-orange); color: var(--color-orange); background: rgba(217, 107, 43, 0.05); }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/40 px-7 py-3.5 font-heading font-bold text-sm uppercase tracking-wide text-white transition-all duration-200;
+  }
+  .btn-outline:hover { background: rgba(255, 255, 255, 0.12); }
+
+  .kicker {
+    @apply inline-flex items-center gap-2 font-heading font-bold text-xs uppercase tracking-[0.18em];
+  }
+  .kicker::before { content: ""; @apply block h-2 w-2 rounded-full; background: var(--color-orange); }
+
+  .card {
+    @apply bg-white rounded-2xl border border-line;
+    box-shadow: var(--shadow-card);
+  }
+}
+
+@layer utilities {
+  .grid-bg {
+    background-image:
+      linear-gradient(to right, rgba(47, 42, 38, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(47, 42, 38, 0.04) 1px, transparent 1px);
+    background-size: 36px 36px;
+  }
+  @keyframes fade-up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+  .fade-up { animation: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+}
