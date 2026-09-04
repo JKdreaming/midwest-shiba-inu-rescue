@@ -2,9 +2,9 @@
 
 /* Warm, approachable palette for a Shiba Inu rescue non-profit. */
 @theme {
-  --color-orange: #d96b2b;
-  --color-orange-light: #eda44e;
-  --color-orange-dark: #b5521f;
+  --color-orange: #e00020;
+  --color-orange-light: #ff8a92;
+  --color-orange-dark: #a5001c;
 
   --color-navy: #2f2a26;
   --color-navy-light: #4a423b;
@@ -40,13 +40,13 @@
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 font-heading font-bold text-sm uppercase tracking-wide text-white transition-all duration-200;
     background: var(--color-orange);
-    box-shadow: 0 8px 20px rgba(217, 107, 43, 0.28);
+    box-shadow: 0 8px 20px rgba(224, 0, 32, 0.26);
   }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(217, 107, 43, 0.38); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(224, 0, 32, 0.36); }
   .btn-secondary {
     @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-line px-7 py-3.5 font-heading font-bold text-sm uppercase tracking-wide text-ink transition-all duration-200;
   }
-  .btn-secondary:hover { border-color: var(--color-orange); color: var(--color-orange); background: rgba(217, 107, 43, 0.05); }
+  .btn-secondary:hover { border-color: var(--color-orange); color: var(--color-orange); background: rgba(224, 0, 32, 0.05); }
   .btn-outline {
     @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/40 px-7 py-3.5 font-heading font-bold text-sm uppercase tracking-wide text-white transition-all duration-200;
   }
