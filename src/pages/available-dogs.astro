@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
-import { STATES } from '../data/site';
+import { STATES, FORMS } from '../data/site';
 ---
 
 <BaseLayout
@@ -24,7 +24,7 @@ import { STATES } from '../data/site';
         <p class="font-semibold text-navy">To see today's dogs and read their full stories, visit our live listings:</p>
         <div class="mt-6 flex flex-wrap justify-center gap-3">
           <a href="https://www.shibarescue.org/availabledogs" target="_blank" class="btn-primary">View Current Available Dogs</a>
-          <a href="/adoption-process/" class="btn-secondary">Adoption Process</a>
+          <a href={FORMS.adoption} target="_blank" rel="noopener" class="btn-secondary">Apply to Adopt</a>
         </div>
       </div>
       <p class="mt-6 text-sm text-muted">The entire household (including canine members) is required to travel to the dog for a meet & greet. We are a best-fit rescue — not first-come, first-served.</p>

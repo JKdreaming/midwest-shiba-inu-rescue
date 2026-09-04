@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
-import { ADOPTION_FEES, ADOPTION_STEPS, ADOPTION_REQUIREMENTS } from '../data/site';
+import { ADOPTION_FEES, ADOPTION_STEPS, ADOPTION_REQUIREMENTS, FORMS, LINKS, AVG_VET_COST } from '../data/site';
 ---
 
 <BaseLayout
@@ -22,7 +22,7 @@ import { ADOPTION_FEES, ADOPTION_STEPS, ADOPTION_REQUIREMENTS } from '../data/si
         <div>
           <div class="kicker text-orange">Adoption fees</div>
           <h2 class="mt-3 text-3xl font-black text-navy">What it costs to adopt</h2>
-          <p class="mt-4 leading-relaxed text-ink/80">MSIR's adoption fee covers only a portion of the medical care we provide each dog. Every dog is spayed or neutered, up-to-date on vaccines, heartworm negative, and microchipped — and comes with a Fi GPS collar and a six-month subscription.</p>
+          <p class="mt-4 leading-relaxed text-ink/80">On average, MSIR spends {AVG_VET_COST} per dog on veterinary bills and foster care. The adoption fee covers only a portion of that. Every dog is spayed or neutered, up-to-date on vaccines, heartworm negative, and microchipped — and comes with a <a href={LINKS.fiCollarProgram} target="_blank" rel="noopener" class="font-semibold text-orange hover:underline">Fi GPS collar</a> and a six-month subscription.</p>
           <div class="mt-6 overflow-hidden rounded-2xl border border-line">
             {ADOPTION_FEES.map((f, i) => (
               <div class={`flex items-center justify-between px-5 py-4 ${i % 2 ? 'bg-cream' : 'bg-white'}`}>
@@ -66,9 +66,11 @@ import { ADOPTION_FEES, ADOPTION_STEPS, ADOPTION_REQUIREMENTS } from '../data/si
           </li>
         ))}
       </ol>
-      <div class="mt-10 text-center">
-        <a href="/available-dogs/" class="btn-primary">See Available Dogs</a>
+      <div class="mt-10 flex flex-wrap justify-center gap-3">
+        <a href={FORMS.adoption} target="_blank" rel="noopener" class="btn-primary">Apply to Adopt</a>
+        <a href="/available-dogs/" class="btn-secondary">See Available Dogs</a>
       </div>
+      <p class="mt-6 text-center text-sm text-muted">Due to the volume of applications and our all-volunteer team, not every applicant will receive a response — we do our best. MSIR reserves the right to refuse adoption to anyone. Questions? Email <a href="mailto:adoptions@shibarescue.org" class="font-semibold text-orange hover:underline">adoptions@shibarescue.org</a>.</p>
     </div>
   </section>
 </BaseLayout>

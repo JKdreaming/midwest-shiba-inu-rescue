@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { SITE, STATES, COORDINATORS, MISSION } from '../data/site';
+import { SITE, STATES, LINKS } from '../data/site';
 
 interface Props {
   title: string;
@@ -134,6 +134,7 @@ const schema = {
               <p>{SITE.address}, {SITE.city}, {SITE.state} {SITE.zip}</p>
               <a href={SITE.phoneHref} class="block font-bold text-white hover:text-orange-light">{SITE.phone}</a>
               <a href={`mailto:${SITE.email}`} class="block hover:text-white">{SITE.email}</a>
+              <a href={LINKS.facebook} target="_blank" rel="noopener" class="block hover:text-white">Facebook</a>
             </div>
           </div>
           <div>

@@ -14,8 +14,23 @@ export const SITE = {
   paypal: 'https://www.paypal.com/donate?token=rFAnaRvs69_YMzIzVLDoMxMQmrnVySuWk8PSwmryvHPlym0XvawSzg8KJTT4QqO6gkEujplQ-PJwosBv',
 };
 
-export const STATES = ['Iowa', 'Illinois', 'Indiana', 'Kansas', 'Michigan', 'Minnesota', 'Missouri', 'Nebraska', 'Ohio', 'Wisconsin'];
-export const STATES_ABBR = ['IA', 'IL', 'IN', 'KS', 'MI', 'MN', 'MO', 'NE', 'OH', 'WI'];
+export const STATES = ['Iowa', 'Illinois', 'Indiana', 'Kansas', 'Michigan', 'Minnesota', 'Missouri', 'Nebraska', 'North Dakota', 'Ohio', 'South Dakota', 'Wisconsin'];
+export const STATES_ABBR = ['IA', 'IL', 'IN', 'KS', 'MI', 'MN', 'MO', 'NE', 'ND', 'OH', 'SD', 'WI'];
+
+export const AVG_VET_COST = '$700';
+
+export const FORMS = {
+  adoption: 'https://docs.google.com/forms/d/e/1FAIpQLSdk07Nm7BQdPOf0kKvK2QUT_8R4v-O29DRjGS4sbofANxmjuA/viewform',
+  foster: 'https://docs.google.com/forms/d/e/1FAIpQLSeaH5isyixHmRDQPdTKEPuk6bvBy66PqoM0U5fwc4Y1iy21-Q/viewform',
+  volunteer: 'https://docs.google.com/forms/d/e/1FAIpQLSdYZZP-l5nFxJTyKXw4ItUeQTrjQ77muom8amAqSvxjctacHA/viewform',
+  surrender: 'https://docs.google.com/forms/d/e/1FAIpQLSfS_PnUL-bj-WaTS5qstm7gF_CragaXE0XLFEyyKBuxxrLdzQ/viewform',
+};
+
+export const LINKS = {
+  amazonWishlist: 'https://smile.amazon.com/hz/wishlist/ls/PN4CUZRDQIKB',
+  fiCollarProgram: 'https://support.tryfi.com/hc/en-us/categories/9384755805715-Fi-Rescue-Collar-Program',
+  facebook: 'https://www.facebook.com/shibarescue',
+};
 
 export const MISSION = 'Midwest Shiba Inu Rescue (MSIR) is a non-profit, all-volunteer, licensed rescue founded in 2002. We seek out, foster, and place homeless Shiba Inu dogs throughout the Midwest — and we are a network of volunteer foster homes, not a facility.';
 

@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { SITE } from '../data/site';
+import { SITE, LINKS } from '../data/site';
 ---
 
 <BaseLayout
@@ -33,7 +33,7 @@ import { SITE } from '../data/site';
       </div>
       <div class="mt-8 rounded-2xl bg-sand p-8">
         <h3 class="text-xl font-black text-navy">Donate goods or services</h3>
-        <p class="mt-2 text-sm leading-relaxed text-muted">We almost always need dog crates and mats, collars and leashes, dog toys, and other dog-related items. We often keep Amazon Wish Lists for specific Shibas in our care. We also welcome printing services, veterinary and boarding services, and items for our annual auction.</p>
+        <p class="mt-2 text-sm leading-relaxed text-muted">We almost always need dog crates and mats, collars and leashes, dog toys, and other dog-related items. We keep an <a href={LINKS.amazonWishlist} target="_blank" rel="noopener" class="font-semibold text-orange hover:underline">Amazon Wish List</a> for specific Shibas in our care. We also welcome printing services, veterinary and boarding services, and items for our annual auction.</p>
       </div>
     </div>
   </section>
