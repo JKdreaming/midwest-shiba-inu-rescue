@@ -1,8 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Hero from '../components/Hero.astro';
 import { DOGS, type Dog } from '../data/dogs';
 import { FORMS } from '../data/site';
+const featuredDog = DOGS[0];
 
 const statusStyle: Record<Dog['status'], { dot: string; badge: string }> = {
   available: { dot: '#2f9e44', badge: 'bg-[#e8f5ec] text-[#1e7a33]' },
@@ -15,13 +15,31 @@ const statusStyle: Record<Dog['status'], { dot: string; badge: string }> = {
   title="Available Dogs for Adoption | Midwest Shiba Inu Rescue"
   description="Meet the Shiba Inu dogs currently available for adoption through Midwest Shiba Inu Rescue — each one living in a volunteer foster home across the Midwest."
 >
-  <Hero
-    kicker="Available Dogs"
-    title="Meet Our Foster Dogs"
-    subtitle="Every MSIR Shiba lives in a volunteer foster home. An adoption application must be on file to be considered for adoption."
-    image="/images/adopt-dog.jpg"
-    imagePos="50% -140px"
-  />
+  <section class="relative overflow-hidden bg-navy py-16 md:py-20">
+    <div class="absolute inset-0 grid-bg opacity-[0.06]"></div>
+    <div class="relative mx-auto max-w-page px-5">
+      <div class="grid items-center gap-10 lg:grid-cols-2">
+        <div>
+          <div class="kicker !text-orange-light">Available Dogs</div>
+          <h1 class="mt-4 text-4xl font-black text-white md:text-5xl">Meet Our Foster Dogs</h1>
+          <p class="mt-5 text-lg leading-relaxed text-white/80">Every MSIR Shiba lives in a volunteer foster home. An adoption application must be on file to be considered for adoption.</p>
+        </div>
+        <a href={`/dogs/${featuredDog.slug}/`} class="group block overflow-hidden rounded-2xl bg-white shadow-lg">
+          <div class="relative">
+            <img src={featuredDog.cardImage} alt={`${featuredDog.name}, the latest Shiba for adoption`} class="aspect-square w-full object-cover object-top" />
+            <span class="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-[#e8f5ec] px-3 py-1 text-xs font-bold uppercase tracking-wide text-[#1e7a33]">
+              <span class="h-2 w-2 rounded-full bg-[#2f9e44]"></span>
+              Latest for adoption
+            </span>
+          </div>
+          <div class="p-4">
+            <h3 class="font-heading text-xl font-bold text-navy group-hover:text-orange">{featuredDog.name}</h3>
+            <p class="mt-0.5 text-sm text-muted">{featuredDog.sex} &middot; {featuredDog.age} &middot; {featuredDog.weight}</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
 
   <section class="bg-white py-16">
     <div class="mx-auto max-w-page px-5">
