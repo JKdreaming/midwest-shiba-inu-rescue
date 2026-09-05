@@ -35,7 +35,7 @@ export const LINKS = {
 export const MISSION = 'Midwest Shiba Inu Rescue (MSIR) is a non-profit, all-volunteer, licensed rescue founded in 2002. We seek out, foster, and place homeless Shiba Inu dogs throughout the Midwest — and we are a network of volunteer foster homes, not a facility.';
 
 export const HELP_PATHS = [
-  { slug: 'adoption-process', title: 'Adopt', icon: 'paw', desc: 'Give a rescued Shiba a forever home. See our adoption process and current dogs.' },
+  { slug: 'adoption-process', title: 'Adopt', icon: 'dog', desc: 'Give a rescued Shiba a forever home. See our adoption process and current dogs.' },
   { slug: 'volunteer', title: 'Foster', icon: 'home', desc: 'Foster homes are the foundation of our rescue. Open your home to a Shiba in transition.' },
   { slug: 'volunteer', title: 'Volunteer', icon: 'heart', desc: 'From transport to home visits, every role helps Shibas in need.' },
   { slug: 'donate', title: 'Donate', icon: 'gift', desc: 'Every dollar goes to the care of our dogs — tax-deductible and life-changing.' },
