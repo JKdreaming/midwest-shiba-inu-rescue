@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const PRODUCTS = [
+  { name: 'MSIR + Bonfire Shirts', desc: 'High-quality shirts with super fun designs and unique graphics. MSIR receives a portion of each purchase.', href: 'https://www.bonfire.com/store/msir', cta: 'Shop Bonfire' },
+  { name: 'Plush Fox Toy', desc: 'A plush fox toy for your Shiba.', href: null, cta: null },
+  { name: '"A Spoiled Rotten Shiba Inu Lives Here" Doorknob Hanger', desc: 'Let visitors know who runs the house.', href: null, cta: null },
+  { name: 'Shiba Inu "Do Not Tailgate" Magnet', desc: 'A magnet for the Shiba lover on the road.', href: null, cta: null },
+  { name: 'My Best Friend Magnet', desc: 'Celebrate your best friend.', href: null, cta: null },
+  { name: 'MSIR Magnets', desc: 'Show your support on the fridge.', href: null, cta: null },
+  { name: "Jane's Brain Toys", desc: 'Brain-teasing toys for smart Shibas.', href: null, cta: null },
+];
+---
+
+<BaseLayout
+  title="Shiba Shoppe | Midwest Shiba Inu Rescue"
+  description="Support MSIR with shirts, magnets, toys, and more from the Shiba Shoppe. Profits go to save more Shibas!"
+>
+  <section class="relative overflow-hidden bg-navy py-24">
+    <div class="absolute inset-0 grid-bg opacity-[0.06]"></div>
+    <div class="relative mx-auto max-w-3xl px-5 text-center">
+      <div class="kicker !text-orange-light justify-center">Shiba Shoppe</div>
+      <h1 class="mt-4 text-4xl font-black text-white md:text-5xl">Look great, save Shibas</h1>
+      <p class="mt-4 text-lg text-white/80">Every purchase supports MSIR. Profits go to save more Shibas!</p>
+    </div>
+  </section>
+
+  <section class="bg-white py-16">
+    <div class="mx-auto max-w-page px-5">
+      <div class="rounded-2xl bg-orange p-8 text-center md:p-10">
+        <h2 class="text-2xl font-black text-white md:text-3xl">MSIR has teamed up with Bonfire</h2>
+        <p class="mx-auto mt-3 max-w-xl text-white/90">These shirts don&rsquo;t just make you look great \u2014 you&rsquo;ll feel great too. MSIR has teamed up with Bonfire to create high-quality shirts with super fun designs and unique graphics. Our shirts are a great way to show your love for Shibas and animal rescue while supporting MSIR in the process. MSIR receives a portion of the purchase price for each item purchased.</p>
+        <a href="https://www.bonfire.com/store/msir" target="_blank" rel="noopener" class="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-3.5 font-heading text-sm font-bold uppercase tracking-wide text-orange transition hover:bg-cream">Shop Bonfire Store</a>
+      </div>
+
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {PRODUCTS.filter((p) => p.name !== 'MSIR + Bonfire Shirts').map((p) => (
+          <div class="card p-6">
+            <h3 class="font-heading text-lg font-bold text-navy">{p.name}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-muted">{p.desc}</p>
+            <a href="https://www.bonfire.com/store/msir" target="_blank" rel="noopener" class="mt-4 inline-block text-sm font-semibold text-orange hover:underline">Available via Bonfire &rarr;</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

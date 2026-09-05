@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { LINKS } from '../data/site';
+
+const GROUPS = [
+  {
+    title: 'Walking & safety',
+    items: [
+      'No-slip collar for walking (usually small) — search for Martingale, Limited Choke, or No Slip. This is one of the few collar styles a Shiba cannot back out of. Good brands are Lupine and Premier.',
+      'Leather roll collar — prevents matting of the neck fur.',
+      'Identification tag with at least one, but preferably two, phone numbers.',
+      'TWO leashes (always have a backup!). We do not recommend flexi-leashes — we recommend high-quality leather leashes as they are less likely to break.',
+      'Harness.',
+      '20&prime; tie-out cable (especially useful if you do not have a fenced yard).',
+    ],
+  },
+  {
+    title: 'Home & comfort',
+    items: [
+      'Crate, size medium or large.',
+      'Bedding / a place to sleep (old blankets, towels, or rugs work too).',
+    ],
+  },
+  {
+    title: 'Play & chew',
+    items: [
+      'Toys — think texture and variety: squeak toys (plush and plastic), Kongs, tennis balls, rope toys.',
+      'RAW bones (NO cooked!) for teeth-cleaning — e.g. soup bones or knuckles, available at supermarkets.',
+      'No rawhides for dogs under a year — they can cause diarrhea.',
+    ],
+  },
+  {
+    title: 'Grooming',
+    items: [
+      'Undercoat rake or shedding brush (many people like the Furminator).',
+      'Everyday brush.',
+      'Nail clippers and styptic powder (optional — you may choose to use a professional).',
+      'Dog shampoo when needed — choose one with Essential Fatty Acids for best results.',
+    ],
+  },
+  {
+    title: 'Food & health',
+    items: [
+      'Food (ask your volunteer coordinator which brand).',
+      'High-value treats (for training).',
+      'Food and water bowls — metal or ceramic is recommended, as plastic can harbor bacteria.',
+      'A small bottle of Nature&rsquo;s Miracle or another enzyme cleaner, in case of accidents.',
+      'Bittering spray, like Bitter Apple (recommended for puppies or young dogs).',
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="What Do I Need for My Shiba? | Midwest Shiba Inu Rescue"
+  description="The complete new-owner supply checklist from Midwest Shiba Inu Rescue — collars, crates, grooming, food, and everything a Shiba Inu needs."
+>
+  <section class="relative overflow-hidden bg-navy py-24">
+    <div class="absolute inset-0 grid-bg opacity-[0.06]"></div>
+    <div class="relative mx-auto max-w-3xl px-5 text-center">
+      <div class="kicker !text-orange-light justify-center">New owner guide</div>
+      <h1 class="mt-4 text-4xl font-black text-white md:text-5xl">What do I need for my Shiba?</h1>
+      <p class="mt-4 text-lg text-white/80">Everything to have ready before your Shiba comes home.</p>
+    </div>
+  </section>
+
+  <section class="bg-white py-16">
+    <div class="mx-auto max-w-page px-5">
+      <div class="grid gap-6 md:grid-cols-2">
+        {GROUPS.map((g) => (
+          <div class="card p-6">
+            <h2 class="font-heading text-xl font-bold text-navy">{g.title}</h2>
+            <ul class="mt-4 grid gap-3">
+              {g.items.map((item) => (
+                <li class="flex items-start gap-3">
+                  <svg class="mt-1 h-5 w-5 shrink-0 text-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                  <span class="text-sm leading-relaxed text-ink/85" set:html={item} />
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-10 rounded-2xl bg-sand p-8 text-center">
+        <p class="text-ink/80">MSIR now sells Lupine gear — visit our <a href="/swag/" class="font-semibold text-orange hover:underline">Shiba Shoppe</a>. Profits go to save more Shibas!</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

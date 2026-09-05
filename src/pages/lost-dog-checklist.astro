@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const SECTIONS = [
+  {
+    title: 'People to contact',
+    items: ['MSIR', 'Lost Dogs of your State (Facebook & website)', 'Local police department', 'Local shelters', 'Local animal control', 'Neighborhood Watch / Homeowner Association', 'Area vets and your personal vet', 'Microchip company'],
+  },
+  {
+    title: 'Things to do',
+    items: [
+      'Put your dog\u2019s most-used crate outside the door, filled with a favorite blanket or a shirt of their favorite human.',
+      'Rub a blanket on your resident dog and their humans, then place it in the crate. Put water and a small amount of food in a dish (not a full meal).',
+      'Print posters and hang them around the neighborhood and on light poles \u2014 place each poster in a gallon ziplock bag to protect it from weather.',
+      'Post the lost-dog info on social media and ask friends to share.',
+      'If appropriate, set up live traps and feeding stations.',
+    ],
+  },
+  {
+    title: 'Organize a search party',
+    items: [
+      'Contact local MSIR volunteers to organize a search party.',
+      'Bring friendly dogs if possible, and smelly treats.',
+      'Rub the resident dog\u2019s smell over blankets and towels to place around the area.',
+      'Keep the search party small (under 10\u201315 people) \u2014 others can help pass out flyers and notify neighbors.',
+      'Search small cubby holes, garbage cans, dumpsters, yards, under bushes, steps, and garage doors, and in sheds or other enclosed spaces \u2014 especially the calmer, quieter parts of the neighborhood.',
+    ],
+  },
+  {
+    title: 'Things NOT to do',
+    items: ['Offer a reward if found', 'Have a big search party', 'Chase the dog \u2014 they will continue to run'],
+  },
+];
+---
+
+<BaseLayout
+  title="Lost Dog Checklist | Midwest Shiba Inu Rescue"
+  description="Lost Shiba Inu? Use the MSIR Lost Dog Checklist — who to contact, what to do, and how to organize a search party without chasing your dog."
+>
+  <section class="relative overflow-hidden bg-navy py-24">
+    <div class="absolute inset-0 grid-bg opacity-[0.06]"></div>
+    <div class="relative mx-auto max-w-3xl px-5 text-center">
+      <div class="kicker !text-orange-light justify-center">Lost Dog Checklist</div>
+      <h1 class="mt-4 text-4xl font-black text-white md:text-5xl">If your Shiba goes missing</h1>
+      <p class="mt-4 text-lg text-white/80">Act fast, stay calm, and follow this checklist.</p>
+      <a href="/lost-dog-checklist.pdf" download class="btn-primary mt-8">Download the Checklist (PDF)</a>
+    </div>
+  </section>
+
+  <section class="bg-white py-16">
+    <div class="mx-auto max-w-page px-5">
+      <div class="grid gap-6 md:grid-cols-2">
+        {SECTIONS.map((s) => (
+          <div class="card p-6">
+            <h2 class="font-heading text-xl font-bold text-navy">{s.title}</h2>
+            <ul class="mt-4 grid gap-3">
+              {s.items.map((item) => (
+                <li class="flex items-start gap-3">
+                  <svg class="mt-1 h-5 w-5 shrink-0 text-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                  <span class="text-sm leading-relaxed text-ink/85">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

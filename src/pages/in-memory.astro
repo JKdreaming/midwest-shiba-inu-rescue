@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { MEMORIAL } from '../data/memorial';
+---
+
+<BaseLayout
+  title="In Memory — MSIR Pawbassadors | Midwest Shiba Inu Rescue"
+  description="In loving memory of the MSIR alumni and pawbassadors who have crossed over the Rainbow Bridge. Always loved, never forgotten, forever missed."
+>
+  <section class="relative overflow-hidden bg-navy py-24">
+    <div class="absolute inset-0 grid-bg opacity-[0.06]"></div>
+    <div class="relative mx-auto max-w-3xl px-5 text-center">
+      <div class="kicker !text-orange-light justify-center">In loving memory</div>
+      <h1 class="mt-4 text-4xl font-black text-white md:text-5xl">Over the Rainbow Bridge</h1>
+      <p class="mt-4 text-lg text-white/80">In loving memory of MSIR alumni &amp; pawbassadors who have crossed over. Always loved, never forgotten, forever missed.</p>
+    </div>
+  </section>
+
+  <section class="bg-white py-16">
+    <div class="mx-auto max-w-page px-5">
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {MEMORIAL.map((m) => (
+          <figure class="text-center">
+            <div class="overflow-hidden rounded-xl bg-sand">
+              <img src={m.image} alt={`${m.name} — in loving memory`} class="w-full h-auto grayscale transition duration-300 hover:grayscale-0" loading="lazy" />
+            </div>
+            <figcaption class="mt-3 font-heading text-lg font-bold text-navy">{m.name}</figcaption>
+          </figure>
+        ))}
+      </div>
+
+      <p class="mx-auto mt-12 max-w-xl text-center leading-relaxed text-muted">These Shibas touched our hearts and left paw prints that never fade. We carry them with us in every dog we save.</p>
+    </div>
+  </section>
+</BaseLayout>

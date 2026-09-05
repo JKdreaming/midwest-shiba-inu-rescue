@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { FORMS } from '../data/site';
+---
+
+<BaseLayout
+  title="Transport Volunteers | Midwest Shiba Inu Rescue"
+  description="Volunteer to transport Shiba Inu dogs to their foster homes — a low-commitment way to help save a life, one 100-mile leg at a time."
+>
+  <section class="relative overflow-hidden bg-navy py-24">
+    <div class="absolute inset-0 grid-bg opacity-[0.06]"></div>
+    <div class="relative mx-auto max-w-3xl px-5 text-center">
+      <div class="kicker !text-orange-light justify-center">Transport Volunteers</div>
+      <h1 class="mt-4 text-4xl font-black text-white md:text-5xl">Your low-commitment way to save a life</h1>
+      <p class="mt-4 text-lg text-white/80">Move dogs to their foster homes and supplies to areas in need — one short leg at a time.</p>
+      <a href={FORMS.volunteer} target="_blank" rel="noopener" class="btn-primary mt-8">Volunteer Now</a>
+    </div>
+  </section>
+
+  <section class="bg-white py-16">
+    <div class="mx-auto max-w-3xl px-5">
+      <div class="grid gap-10">
+        <div>
+          <div class="kicker text-orange">Where do transports go?</div>
+          <h2 class="mt-2 text-2xl font-black text-navy">All over the Midwest</h2>
+          <p class="mt-3 leading-relaxed text-ink/80">MSIR uses volunteer transports to move dogs to their foster homes and supplies to areas in need. There are dogs in need and foster homes all over the Midwest — including rural areas that are not near major interstates!</p>
+          <p class="mt-2 text-sm text-muted">Most transports occur in: IA, IL, IN, KS, KY, MI, MN, MO, NE, OH, SD, WI</p>
+        </div>
+
+        <div>
+          <div class="kicker text-orange">How much time does a transport take?</div>
+          <h2 class="mt-2 text-2xl font-black text-navy">About 3 hours, once</h2>
+          <p class="mt-3 leading-relaxed text-ink/80">While our transports can cross many states and take all day, each volunteer is only responsible for one portion of the drive that is 100 miles or less. Here are some examples:</p>
+          <ul class="mt-4 grid gap-3">
+            <li class="rounded-xl bg-sand px-4 py-3 text-sm">Pick up a dog in Seward, IA at 12pm, drive to Council Bluffs, IA, and hand off to the next volunteer at 1:20pm.</li>
+            <li class="rounded-xl bg-sand px-4 py-3 text-sm">Pick up a dog in Indianapolis, IN at 9am, drive to Rensselaer, IN, and hand off to the next volunteer at 10:40am.</li>
+          </ul>
+          <p class="mt-4 leading-relaxed text-ink/80">Each volunteer driver typically commits to about 3 hours of driving on a Saturday or Sunday, is welcome to take as many photos as they want, and gets to know they helped save a dog&rsquo;s life!</p>
+        </div>
+
+        <div>
+          <div class="kicker text-orange">How big of a car do I need?</div>
+          <h2 class="mt-2 text-2xl font-black text-navy">Most vehicles work</h2>
+          <p class="mt-3 leading-relaxed text-ink/80">Dogs are always transported in a crate — and must remain in their crate for safety. Each crate is roughly 30&Prime; &times; 24&Prime; &times; 20&Prime;, which fits into most vehicles. Occasionally a transport will include multiple dogs, and we will ask for larger vehicles to help.</p>
+        </div>
+
+        <div>
+          <div class="kicker text-orange">Can I bring my kids, pets, or friends?</div>
+          <h2 class="mt-2 text-2xl font-black text-navy">Pets stay home</h2>
+          <p class="mt-3 leading-relaxed text-ink/80">Transports are feel-good experiences for volunteers, but they can be terrifying for these dogs — who may be coming from a shelter, a puppy mill, or the loss of the only family they have known. The Shibas often have infections like Giardia that can make you, your pets, and your children sick. Therefore, personal pets are not allowed on transports.</p>
+        </div>
+      </div>
+
+      <div class="mt-12 rounded-2xl bg-sand p-8 text-center">
+        <h3 class="text-2xl font-black text-navy">Ready to help move a Shiba home?</h3>
+        <div class="mt-6 flex flex-wrap justify-center gap-3">
+          <a href={FORMS.volunteer} target="_blank" rel="noopener" class="btn-primary">Volunteer Application</a>
+          <a href="/volunteer/" class="btn-secondary">Other Ways to Volunteer</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
