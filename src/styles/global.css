@@ -55,7 +55,7 @@
   .kicker {
     @apply inline-flex items-center gap-2 font-heading font-bold text-xs uppercase tracking-[0.18em];
   }
-  .kicker::before { content: ""; @apply block h-2 w-2 rounded-full; background: var(--color-orange); }
+  .kicker::before { content: ""; @apply block h-2 w-2 rounded-full; background: currentColor; }
 
   .card {
     @apply bg-white rounded-2xl border border-line;

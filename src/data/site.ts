@@ -11,7 +11,7 @@ export const SITE = {
   state: 'IL',
   zip: '60031',
   domain: 'https://www.shibarescue.org/',
-  paypal: 'https://www.paypal.com/donate?token=rFAnaRvs69_YMzIzVLDoMxMQmrnVySuWk8PSwmryvHPlym0XvawSzg8KJTT4QqO6gkEujplQ-PJwosBv',
+  paypal: 'https://www.paypal.com/donate/?hosted_button_id=JNW4JJNGJZQML',
 };
 
 export const STATES = ['Iowa', 'Illinois', 'Indiana', 'Kansas', 'Michigan', 'Minnesota', 'Missouri', 'Nebraska', 'North Dakota', 'Ohio', 'South Dakota', 'Wisconsin'];
@@ -27,7 +27,7 @@ export const FORMS = {
 };
 
 export const LINKS = {
-  amazonWishlist: 'https://smile.amazon.com/hz/wishlist/ls/PN4CUZRDQIKB',
+  amazonWishlist: 'https://www.amazon.com/hz/wishlist/ls/PN4CUZRDQIKB',
   fiCollarProgram: 'https://support.tryfi.com/hc/en-us/categories/9384755805715-Fi-Rescue-Collar-Program',
   facebook: 'https://www.facebook.com/shibarescue',
 };
