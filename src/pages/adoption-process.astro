@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import { ADOPTION_FEES, ADOPTION_STEPS, ADOPTION_REQUIREMENTS, FORMS, LINKS, AVG_VET_COST } from '../data/site';
+import { DOGS } from '../data/dogs';
 ---
 
 <BaseLayout
@@ -71,6 +72,36 @@ import { ADOPTION_FEES, ADOPTION_STEPS, ADOPTION_REQUIREMENTS, FORMS, LINKS, AVG
         <a href="/available-dogs/" class="btn-secondary">See Available Dogs</a>
       </div>
       <p class="mt-6 text-center text-sm text-muted">Due to the volume of applications and our all-volunteer team, not every applicant will receive a response — we do our best. MSIR reserves the right to refuse adoption to anyone. Questions? Email <a href="mailto:adoptions@shibarescue.org" class="font-semibold text-orange hover:underline">adoptions@shibarescue.org</a>.</p>
+    </div>
+  </section>
+
+  <!-- Available dogs marquee -->
+  <section class="bg-white py-16">
+    <div class="mx-auto max-w-page px-5">
+      <div class="mb-6 text-center">
+        <h2 class="text-3xl font-black text-navy">Available for adoption</h2>
+        <a href="/available-dogs/" class="mt-1 inline-block text-sm font-semibold text-orange hover:underline">See all available dogs &rarr;</a>
+      </div>
+      <div class="overflow-hidden">
+        <div class="marquee-track flex w-max items-center">
+          <div class="flex shrink-0 items-center gap-6 pr-6">
+            {DOGS.map((d) => (
+              <a href={d.hasProfile ? `/dogs/${d.slug}/` : '/available-dogs/'} class="flex w-32 shrink-0 flex-col items-center gap-2">
+                <img src={d.cardImage} alt={`${d.name}, a Shiba Inu`} class="h-32 w-32 rounded-full object-cover object-top" loading="lazy" />
+                <span class="text-xs font-semibold text-ink/70">{d.name}</span>
+              </a>
+            ))}
+          </div>
+          <div class="flex shrink-0 items-center gap-6 pr-6" aria-hidden="true">
+            {DOGS.map((d) => (
+              <span class="flex w-32 shrink-0 flex-col items-center gap-2">
+                <img src={d.cardImage} alt="" class="h-32 w-32 rounded-full object-cover object-top" loading="lazy" />
+                <span class="text-xs font-semibold text-ink/70">{d.name}</span>
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </BaseLayout>
