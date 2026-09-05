@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ShibaWalk from '../components/ShibaWalk.astro';
 import { ALUMNI } from '../data/alumni';
 ---
 
@@ -7,13 +8,16 @@ import { ALUMNI } from '../data/alumni';
   title="MSIR Alumni — Adopted Shibas | Midwest Shiba Inu Rescue"
   description="Meet some of the Shiba Inu dogs adopted through Midwest Shiba Inu Rescue — congratulations on finding your furever home!"
 >
-  <section class="relative overflow-hidden bg-orange py-24">
+  <section class="relative overflow-hidden bg-orange pb-52 pt-24">
     <div class="absolute inset-0 grid-bg opacity-[0.06]"></div>
     <div class="relative mx-auto max-w-3xl px-5 text-center">
       <div class="kicker !text-white/90 justify-center">MSIR Alumni</div>
       <h1 class="mt-4 text-4xl font-black text-white md:text-5xl">Found their furever homes</h1>
       <p class="mt-4 text-lg text-white/80">These are the Shibas who once waited on our Available Dogs page — and found their furever homes. Congratulations!</p>
       <a href="/available-dogs/" class="mt-6 inline-block text-sm font-semibold text-white hover:underline">See who&rsquo;s available now &rarr;</a>
+    </div>
+    <div class="pointer-events-none absolute inset-x-0 bottom-0">
+      <ShibaWalk />
     </div>
   </section>
 
