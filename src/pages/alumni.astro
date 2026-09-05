@@ -12,7 +12,8 @@ import { ALUMNI } from '../data/alumni';
     <div class="relative mx-auto max-w-3xl px-5 text-center">
       <div class="kicker !text-orange-light justify-center">MSIR Alumni</div>
       <h1 class="mt-4 text-4xl font-black text-white md:text-5xl">Found their furever homes</h1>
-      <p class="mt-4 text-lg text-white/80">Meet some of our adopted Shibas. Congratulations on finding your furever home!</p>
+      <p class="mt-4 text-lg text-white/80">These are the Shibas who once waited on our Available Dogs page — and found their furever homes. Congratulations!</p>
+      <a href="/available-dogs/" class="mt-6 inline-block text-sm font-semibold text-orange-light hover:underline">See who&rsquo;s available now &rarr;</a>
     </div>
   </section>
 
@@ -22,8 +23,8 @@ import { ALUMNI } from '../data/alumni';
         {ALUMNI.map((a) => (
           <figure class="group relative mb-4 break-inside-avoid overflow-hidden rounded-xl">
             <img src={a.image} alt={`${a.name} — adopted Shiba Inu`} class="w-full h-auto" loading="lazy" />
-            <div class="absolute inset-0 flex items-end bg-gradient-to-t from-navy/85 via-navy/20 to-transparent opacity-0 transition duration-200 group-hover:opacity-100">
-              <span class="p-4 font-heading text-lg font-bold text-white">{a.name}</span>
+            <div class="absolute inset-0 flex items-end bg-gradient-to-t from-navy/90 via-navy/25 to-transparent opacity-0 transition duration-200 group-hover:opacity-100">
+              <span class="p-4 font-heading text-lg font-black text-white">Let&rsquo;s take a look at {a.name}</span>
             </div>
           </figure>
         ))}
