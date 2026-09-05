@@ -5,14 +5,14 @@ interface Props {
   kicker?: string;
   image: string;
   align?: 'left' | 'center';
-  imagePos?: 'top' | 'center';
+  imagePos?: string;
 }
-const { title, subtitle, kicker = 'Midwest Shiba Inu Rescue', image, align = 'left', imagePos = 'center' } = Astro.props;
+const { title, subtitle, kicker = 'Midwest Shiba Inu Rescue', image, align = 'left', imagePos = '50% 50%' } = Astro.props;
 ---
 
 <section class="relative isolate overflow-hidden bg-navy">
   <div class="absolute inset-0">
-    <img src={image} alt={title} class={`h-full w-full object-cover ${imagePos === 'top' ? 'object-top' : 'object-center'}`} />
+    <img src={image} alt={title} class="h-full w-full object-cover" style={`object-position: ${imagePos}`} />
     <div class="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/60 to-navy/30"></div>
   </div>
   <div class={`relative mx-auto flex min-h-[70vh] max-w-page items-end px-5 pb-14 pt-28 ${align === 'center' ? 'justify-center text-center' : 'justify-start'}`}>
