@@ -88,8 +88,8 @@ import { DOGS } from '../data/dogs';
             {DOGS.map((d) => (
               <a href={d.hasProfile ? `/dogs/${d.slug}/` : '/available-dogs/'} class="group flex w-96 shrink-0 flex-col items-center gap-2">
                 <div class="relative">
-                  <img src={d.cardImage} alt={`${d.name}, a Shiba Inu`} class="h-96 w-96 rounded-full object-cover object-top transition duration-200 group-hover:scale-105" loading="lazy" />
-                  <div class="absolute inset-0 flex flex-col items-center justify-center rounded-full bg-navy/75 opacity-0 transition duration-200 group-hover:opacity-100">
+                  <img src={d.cardImage} alt={`${d.name}, a Shiba Inu`} class="h-96 w-96 rounded-full object-cover object-top" loading="lazy" />
+                  <div class="absolute inset-0 flex flex-col items-center justify-center rounded-full bg-orange/90 opacity-0 transition duration-200 group-hover:opacity-100">
                     <span class="px-6 text-center font-heading text-base font-semibold text-white/85">Let&rsquo;s take a look at</span>
                     <span class="mt-1 px-6 text-center font-heading text-2xl font-black text-white">{d.name}</span>
                   </div>
