@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ShibaWalk from '../components/ShibaWalk.astro';
 import { SITE, COORDINATORS } from '../data/site';
 ---
 
@@ -7,12 +8,15 @@ import { SITE, COORDINATORS } from '../data/site';
   title="Contact MSIR | Midwest Shiba Inu Rescue"
   description="Contact Midwest Shiba Inu Rescue — mailing address, phone, and volunteer coordinator email addresses for adoptions, fostering, volunteering, and donations."
 >
-  <section class="relative overflow-hidden bg-orange py-24">
+  <section class="relative overflow-hidden bg-orange pb-36 pt-24">
     <div class="absolute inset-0 grid-bg opacity-[0.06]"></div>
     <div class="relative mx-auto max-w-3xl px-5 text-center">
       <div class="kicker !text-white/90 justify-center">Contact</div>
       <h1 class="mt-4 text-4xl font-black text-white md:text-5xl">How to reach us</h1>
       <p class="mt-4 text-lg text-white/80">Not sure who to contact? Email {SITE.email} and we will route your message.</p>
+    </div>
+    <div class="pointer-events-none absolute inset-x-0 bottom-0">
+      <ShibaWalk />
     </div>
   </section>
 
