@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { DOGS, type Dog } from '../data/dogs';
 import { FORMS } from '../data/site';
 const featuredDog = DOGS[0];
+const otherDogs = DOGS.filter((d) => d.slug !== featuredDog.slug);
 
 const statusStyle: Record<Dog['status'], { dot: string; badge: string }> = {
   available: { dot: '#2f9e44', badge: 'bg-[#e8f5ec] text-[#1e7a33]' },
@@ -50,7 +51,7 @@ const statusStyle: Record<Dog['status'], { dot: string; badge: string }> = {
       </div>
 
       <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {DOGS.map((d) => (
+        {otherDogs.map((d) => (
           <a
             href={d.hasProfile ? `/dogs/${d.slug}/` : FORMS.adoption}
             {...(d.hasProfile ? {} : { target: '_blank', rel: 'noopener' })}
